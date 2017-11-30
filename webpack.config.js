@@ -48,6 +48,17 @@ const config = {
         ]
       },
       {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        use: [{
+          loader: "url-loader",
+          options: {
+            limit: 40000
+          }
+        },
+        "image-webpack-loader"
+        ]
+      },
+      {
         test: /\.scss$/,
         use: [{
           loader: "style-loader" // creates style nodes from JS strings
